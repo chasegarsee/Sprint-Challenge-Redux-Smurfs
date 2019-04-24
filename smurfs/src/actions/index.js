@@ -49,9 +49,10 @@ export const deleteSmurf = smurf => dispatch => {
     })
     .catch(err => {
       console.log(err);
+
+      dispatch({ type: FAILURE, payload: err });
+      return false;
     });
-  dispatch({ type: FAILURE, payload: err });
-  return false;
 };
 
 /*
